@@ -1224,10 +1224,11 @@ CURLcode Curl_readwrite(struct connectdata *conn,
     }
 
 #ifdef ENABLE_QUIC
-    if(conn->transport == TRNSPRT_QUIC)
+    if(conn->transport == TRNSPRT_QUIC) {
       result = Curl_quic_idle(data);
-    if(result)
-      return result;
+      if(result)
+        return result;
+    }
 #endif
   }
 
