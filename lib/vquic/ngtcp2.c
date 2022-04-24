@@ -1885,7 +1885,7 @@ bool Curl_quic_data_pending(const struct Curl_easy *data)
 
 /*
  * Called from transfer.c:Curl_readwrite when neither HTTP level read
- * or write is performed. It is a good place to handle timer expiry
+ * nor write is performed. It is a good place to handle timer expiry
  * for QUIC transport.
  */
 CURLcode Curl_quic_idle(struct Curl_easy *data)
